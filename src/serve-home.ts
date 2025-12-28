@@ -4,7 +4,7 @@ import path from 'node:path'
 
 const staticPath = path.join(process.cwd(), 'static')
 
-export const serveHome: RequestListener = (req, res) => {
+export const serveHome: RequestListener = (_req, res) => {
   res.setHeader('Content-Type', 'text/html')
   fs.createReadStream(path.join(staticPath, 'index.html')).on('error', (error) => {
     if (error.message.startsWith('ENOENT')) {

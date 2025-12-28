@@ -17,4 +17,4 @@ Aplicativo simples de tarefas
 - [x] Sanitizar entrada do usuário
     - resolvido utilizando uma funcao simples para exibir caracteres especiais
       de forma adequada
-- [ ] Melhorar estilos do site
+- [x] Melhorar estilos do site

@@ -23,6 +23,8 @@ export const serveStatic: RequestListener = (req, res) => {
 const getContentType = (file: string) => {
   const ext = file.split('.').pop()
   switch (ext) {
+    case 'css':
+      return 'text/css'
     default:
       return 'text/plain'
   }

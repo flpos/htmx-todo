@@ -10,7 +10,7 @@ export const renderTodo = (todo: Todo) => {
 
   const htmlId = `todo-${todo.id}`
 
-  return `<li id="${htmlId}">
+  return `<li id="${htmlId}" class="flex space-between">
   <label>
     <input
       name="done"
@@ -21,19 +21,22 @@ export const renderTodo = (todo: Todo) => {
     />
     <span>${escapeText(todo.description)}</span>
   </label>
-  <button
-    hx-get="/api/todos/${todo.id}/edit"
-    hx-target="#${htmlId}"
-  >
-    Editar
-  </button>
-  <button
-    hx-delete="/api/todos/${todo.id}"
-    hx-target="closest li"
-    hx-swap="outerHTML"
-  >
-    Apagar
-  </button>
+  <div>
+    <button
+      hx-get="/api/todos/${todo.id}/edit"
+      hx-target="#${htmlId}"
+      style="margin-left: auto;"
+    >
+      Editar
+    </button>
+    <button
+      hx-delete="/api/todos/${todo.id}"
+      hx-target="closest li"
+      hx-swap="outerHTML"
+    >
+      Apagar
+    </button>
+  </div>
 </li>`
 }
 
@@ -54,7 +57,7 @@ export const renderDescriptionForm = (todo: Todo) => {
 }
 
 export const renderTodoList = (todos: Array<Todo>) => {
-  return `<ul id="todos">${todos.map((todo) => {
+  return `<ul id="todos" class="flex flex-column gap-1">${todos.map((todo) => {
     return renderTodo(todo)
   }).join('')}
   </ul>

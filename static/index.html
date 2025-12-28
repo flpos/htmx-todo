@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo</title>
+    <link rel='stylesheet' href="/static/styles.css" />
   </head>
   <body>
     <script src="/static/htmx.js"></script>
-    <h1>Tarefas</h1>
-    <div hx-get="/api/todos" hx-trigger="load"></div>
+    <div class="centered max-w-35rem">
+      <h1>Tarefas</h1>
+      <div hx-get="/api/todos" hx-trigger="load"></div>
+    </div>
   </body>
 </html>
